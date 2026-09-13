@@ -9,11 +9,11 @@ using Robust.Shared.Timing;
 
 namespace Content.Client._Sunrise.Movement.Standing;
 
-public sealed class ProneCrawlVisualsSystem : EntitySystem
+public sealed partial class ProneCrawlVisualsSystem : EntitySystem
 {
-    [Dependency] private readonly SpriteAnimationSystem _animation = default!;
-    [Dependency] private readonly SpritePoseSystem _pose = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private SpriteAnimationSystem _animation = default!;
+    [Dependency] private SpritePoseSystem _pose = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     private const string PullKey = "prone-crawl";
 

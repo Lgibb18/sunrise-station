@@ -8,10 +8,10 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Sunrise.Movement.Standing;
 
-public sealed class ProneCrawlSystem : EntitySystem
+public sealed partial class ProneCrawlSystem : EntitySystem
 {
-    [Dependency] private readonly PullingSystem _pulling = default!;
-    [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private PullingSystem _pulling = default!;
+    [Dependency] private TagSystem _tag = default!;
 
     private static readonly ProtoId<TagPrototype> FootstepSoundTag = "FootstepSound";
 

@@ -9,9 +9,9 @@ namespace Content.Client._Sunrise.Animations;
 /// transitions between base and override poses without absorbing rotation from other animation keys
 /// PVS reset invalidates the applied pose so the current target can be restored on re-entry
 /// </summary>
-public sealed class SpritePoseSystem : EntitySystem
+public sealed partial class SpritePoseSystem : EntitySystem
 {
-    [Dependency] private readonly SpriteAnimationSystem _animation = default!;
+    [Dependency] private SpriteAnimationSystem _animation = default!;
 
     public const string AnimationKey = "sprite-pose";
 

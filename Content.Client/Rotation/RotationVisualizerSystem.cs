@@ -3,9 +3,9 @@ using Robust.Client.GameObjects;
 
 namespace Content.Client.Rotation;
 
-public sealed partial class RotationVisualizerSystem : SharedRotationVisualsSystem // Sunrise-Edit
+public sealed partial class RotationVisualizerSystem : SharedRotationVisualsSystem
 {
-    [Dependency] private readonly AppearanceSystem _appearance = default!;
+    [Dependency] private AppearanceSystem _appearance = default!;
 
     public override void Initialize()
     {

@@ -6,7 +6,7 @@ namespace Content.Client.Rotation;
 
 public sealed partial class RotationVisualizerSystem
 {
-    [Dependency] private readonly SpritePoseSystem _pose = default!;
+    [Dependency] private SpritePoseSystem _pose = default!;
 
     /// <summary>
     /// updates the base pose over animationTime seconds, preserving an active pose override

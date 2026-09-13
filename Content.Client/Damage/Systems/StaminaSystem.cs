@@ -11,9 +11,9 @@ namespace Content.Client.Damage.Systems;
 
 public sealed partial class StaminaSystem : SharedStaminaSystem
 {
-    [Dependency] private readonly SpriteAnimationSystem _animation = default!; // Sunrise-Edit
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly StunSystem _stun = default!; // Clientside Stun System
+    [Dependency] private SpriteAnimationSystem _animation = default!; // Sunrise-Edit
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private StunSystem _stun = default!; // Clientside Stun System
 
     private const string StaminaAnimationKey = "stamina";
 

@@ -17,10 +17,10 @@ namespace Content.Client._Sunrise.Animations;
 /// При выходе из PVS текущие треки сбрасываются до базы, а зарегистрированные циклы остаются и запускаются заново после возврата.
 /// На запаузенных сущностях треки и циклы не обновляются.
 /// </remarks>
-public sealed class SpriteAnimationSystem : EntitySystem
+public sealed partial class SpriteAnimationSystem : EntitySystem
 {
-    [Dependency] private readonly SpriteSystem _sprite = default!;
-    [Dependency] private readonly IClientGameStateManager _gameState = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
+    [Dependency] private IClientGameStateManager _gameState = default!;
 
     private readonly Dictionary<EntityUid, SpriteAnimationState> _states = new();
     private readonly List<EntityUid> _done = new();

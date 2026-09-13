@@ -12,21 +12,18 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._Sunrise.Movement.Standing;
 
-public sealed class ProneCrawlMovementController : VirtualController
+public sealed partial class ProneCrawlMovementController : VirtualController
 {
-    [Dependency] private readonly SharedGravitySystem _gravity = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private SharedGravitySystem _gravity = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
-    private EntityQuery<PullableComponent> _pullableQuery;
-    private EntityQuery<StandingStateComponent> _standingQuery;
+    [Dependency] private EntityQuery<PullableComponent> _pullableQuery = default!;
+    [Dependency] private EntityQuery<StandingStateComponent> _standingQuery = default!;
 
     public override void Initialize()
     {
         UpdatesAfter.Add(typeof(SharedMoverController));
         base.Initialize();
-
-        _pullableQuery = GetEntityQuery<PullableComponent>();
-        _standingQuery = GetEntityQuery<StandingStateComponent>();
     }
 
     public override void UpdateBeforeSolve(bool prediction, float frameTime)

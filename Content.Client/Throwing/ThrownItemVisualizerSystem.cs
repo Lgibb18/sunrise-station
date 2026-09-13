@@ -13,11 +13,11 @@ namespace Content.Client.Throwing;
 /// <summary>
 ///     Handles animating thrown items.
 /// </summary>
-public sealed class ThrownItemVisualizerSystem : EntitySystem
+public sealed partial class ThrownItemVisualizerSystem : EntitySystem
 {
     // Sunrise edit start - перевод на новую систему
-    [Dependency] private readonly SpriteAnimationSystem _anim = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private SpriteAnimationSystem _anim = default!;
+    [Dependency] private IGameTiming _timing = default!;
     // Sunrise edit end
 
     private const string AnimationKey = "thrown-item";

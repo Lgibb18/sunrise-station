@@ -8,11 +8,11 @@ using Robust.Shared.Timing;
 
 namespace Content.Client._Sunrise.Animations;
 
-public sealed class EmoteAnimationSystem : EntitySystem
+public sealed partial class EmoteAnimationSystem : EntitySystem
 {
-    [Dependency] private readonly AnimationPlayerSystem _animationSystem = default!;
-    [Dependency] private readonly SpriteAnimationSystem _spriteAnimation = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private AnimationPlayerSystem _animationSystem = default!;
+    [Dependency] private SpriteAnimationSystem _spriteAnimation = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     private readonly Dictionary<string, Action<EntityUid>> _emoteList = new();
 

@@ -8,9 +8,9 @@ using Robust.Shared.Animations;
 namespace Content.Client.Gravity;
 
 /// <inheritdoc/>
-public sealed class FloatingVisualizerSystem : SharedFloatingVisualizerSystem
+public sealed partial class FloatingVisualizerSystem : SharedFloatingVisualizerSystem
 {
-    [Dependency] private readonly SpriteAnimationSystem AnimationSystem = default!; // Sunrise-Edit
+    [Dependency] private SpriteAnimationSystem AnimationSystem = default!; // Sunrise-Edit
 
     public override void Initialize()
     {

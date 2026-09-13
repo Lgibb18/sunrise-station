@@ -7,10 +7,10 @@ using Robust.Shared.Random;
 
 namespace Content.Client.Jittering
 {
-    public sealed class JitteringSystem : SharedJitteringSystem
+    public sealed partial class JitteringSystem : SharedJitteringSystem
     {
-        [Dependency] private readonly IRobustRandom _random = default!;
-        [Dependency] private readonly SpriteAnimationSystem _animationPlayer = default!; // Sunrise-Edit
+        [Dependency] private IRobustRandom _random = default!;
+        [Dependency] private SpriteAnimationSystem _animationPlayer = default!; // Sunrise-Edit
 
         private readonly float[] _sign = { -1, 1 };
         private readonly string _jitterAnimationKey = "jittering";
