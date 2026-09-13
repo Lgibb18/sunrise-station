@@ -16,7 +16,7 @@ public sealed partial class FloatingVisualizerSystem : SharedFloatingVisualizerS
     {
         base.Initialize();
 
-        SubscribeLocalEvent<FloatingVisualsComponent, ComponentShutdown>((uid, comp, _) => AnimationSystem.Stop(uid, comp.AnimationKey)); // Sunrise-Edit
+        SubscribeLocalEvent<FloatingVisualsComponent, ComponentShutdown>((ent, ref _) => AnimationSystem.Stop(ent.Owner, ent.Comp.AnimationKey)); // Sunrise-Edit
     }
 
     // Sunrise edit start - перенос в новую систему анимации

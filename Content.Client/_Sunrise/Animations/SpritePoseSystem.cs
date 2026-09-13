@@ -17,9 +17,9 @@ public sealed partial class SpritePoseSystem : EntitySystem
 
     public override void Initialize()
     {
-        base.Initialize();
         UpdatesAfter.Add(typeof(AppearanceSystem));
         UpdatesBefore.Add(typeof(SpriteAnimationSystem));
+        base.Initialize();
         SubscribeLocalEvent<CrawlerComponent, ComponentStartup>(OnCrawlerStartup);
         SubscribeLocalEvent<RotationVisualsComponent, ComponentRemove>(OnRotationRemove);
         SubscribeLocalEvent<CrawlerComponent, ComponentRemove>(OnCrawlerRemove);

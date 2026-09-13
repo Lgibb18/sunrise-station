@@ -3,6 +3,7 @@ using Content.Shared.Gravity;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Systems;
+using Content.Shared.Physics.Controllers;
 using Content.Shared.Standing;
 using Content.Shared.Stunnable;
 using Robust.Shared.Physics;
@@ -23,6 +24,7 @@ public sealed partial class ProneCrawlMovementController : VirtualController
     public override void Initialize()
     {
         UpdatesAfter.Add(typeof(SharedMoverController));
+        UpdatesBefore.Add(typeof(SharedConveyorController));
         base.Initialize();
     }
 

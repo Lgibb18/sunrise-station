@@ -19,9 +19,9 @@ public sealed partial class ProneCrawlVisualsSystem : EntitySystem
 
     public override void Initialize()
     {
-        base.Initialize();
         UpdatesAfter.Add(typeof(AppearanceSystem));
         UpdatesBefore.Add(typeof(SpriteAnimationSystem));
+        base.Initialize();
         SubscribeLocalEvent<CrawlerComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<ProneCrawlVisualsComponent, SpriteAnimationResetEvent>(OnAnimationReset);
     }
